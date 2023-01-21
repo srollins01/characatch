@@ -8,8 +8,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.string :event_address
       t.datetime :start_time
       t.datetime :end_time
-      t.integer :status
-
+      t.integer :status, null: false, default: :pending
       t.timestamps
     end
   end
