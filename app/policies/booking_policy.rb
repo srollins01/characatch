@@ -4,12 +4,9 @@ class BookingPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
-    def create?
-      true
-    end
+  end
 
-    def new?
-      create?
-    end
+  def create?
+    true
   end
 end
