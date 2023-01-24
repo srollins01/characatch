@@ -1,0 +1,8 @@
+<%= simple_form_for [@listing, @booking] do |f| %>
+  <%= f.input :start_time, label: 'Start Time', as: :datetime, html5: true %>
+  <%= f.input :start_time, label: 'End Time', as: :datetime, html5: true %>
+  <%= f.input :comment, label: 'Details or requests for this booking', as: :text %>
+  <%= f.input :event_type, label: 'Occasion', collection: %i(Birthday Proposal Wedding Funeral Other)  %>
+  <%= f.input :event_address, label: 'Event Address', as: :text %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
