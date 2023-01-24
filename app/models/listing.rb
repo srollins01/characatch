@@ -5,4 +5,8 @@ class Listing < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :hourly_rate, presence: true, numericality: { greater_than: 0 }
+
+  def rate_usd
+    "$#{hourly_rate}/hour"
+  end
 end
