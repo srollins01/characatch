@@ -1,11 +1,10 @@
 <div class="container">
   <h1>Available Mascots</h1>
 
-  <ol>
   <% if @listings %>
     <% @listings.each do |listing| %>
     <li><%= listing.mascot_name %> -- <%= listing.title %></li>
     <% end %>
   <% end %>
-  </ol>
+
 </div>

@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @listing = Listing.all
+    @listings = policy_scope(Listing)
   end
 
   def show
