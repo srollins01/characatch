@@ -1,14 +1,22 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 mt-3 text-center">
-      <h1>Catch your character today!</h1>
-    </div>
+  <div>
+    <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1674734420/wqtevh0jzjsvz82x3plu.png" alt="Catch your character today!">
   </div>
-  <div class="column">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Chiitan.jpg" alt="" class="avatar">
-    <%= link_to "View Mascots", listings_path, class: "btn btn-inverse" %>
+  <div class="mt-5">
+    <h1>Our most popular characters</h1>
   </div>
-  <div class="column">
-    <img src="https://www.japantimes.co.jp/wp-content/uploads/2018/08/jpulse-20150515-Screen-Shot-2015-05-13-at-6.38.13-PM.png" alt="">
+  <div class="d-flex mt-3">
+    <% @listings.first(4).each do |listing| %>
+      <%= link_to listing_path(listing) do %>
+        <div class="card my-3 me-3" style="width: 18rem;">
+          <img src="#" class="card-img-top" alt="mascot image">
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= listing.mascot_name %></h6><br>
+            <p class="card-text">$<%= listing.hourly_rate %> /hr</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
