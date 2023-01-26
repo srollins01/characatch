@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     # root "articles#index"
     resources :bookings, only: %i[new create]
   end
+
+  get "/dashboard", to: "dashboard#show"
 end
