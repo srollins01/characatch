@@ -8,11 +8,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
+    @booking.user = current_user
+    @booking.status = 'pending'
     authorize @booking
     if @booking.save
-      redirect_to listing_path(@listing)
+      redirect_to listings_path(@listing)
     else
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
