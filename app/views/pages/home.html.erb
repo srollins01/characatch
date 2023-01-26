@@ -6,7 +6,7 @@
     <h1>Our most popular characters</h1>
   </div>
   <div class="d-flex mt-3">
-    <% @listings.first(10).each do |listing| %>
+    <% @listings.first(4).each do |listing| %>
       <%= link_to listing_path(listing) do %>
         <div class="card my-3 me-3" style="width: 18rem;">
           <img src="#" class="card-img-top" alt="mascot image">
