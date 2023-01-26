@@ -1,5 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :user
+  has_many :reviews, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   validates :mascot_name, presence: true
   validates :title, presence: true
   validates :description, presence: true
