@@ -1,10 +1,21 @@
 <div class="container">
-  <h1>Available Mascots</h1>
+  <h1>All Mascots</h1>
 
   <% if @listings %>
+
     <% @listings.each do |listing| %>
-    <li><%= listing.mascot_name %> -- <%= listing.title %></li>
+      <%= link_to listing_path(listing) do %>
+        <div class="card my-3 me-3" style="width: 18rem;">
+          <img src="#" class="card-img-top" alt="mascot image">
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">$<%= listing.mascot_name %> /hr</h6><br>
+          </div>
+        </div>
+      <% end %>
+
     <% end %>
+
   <% end %>
 
 </div>

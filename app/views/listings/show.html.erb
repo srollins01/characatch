@@ -1,5 +1,11 @@
-<h1><%= @listing.title %></h1>
-<img src="<%=cl_image_path @listing.photo.key%>" alt="ちぃたん☆">
+ <div class="d-flex justify-content-between">
+        <h1><%= @listing.title %></h1>
+        <%= link_to listings_path do %>
+          <button class="btn btn-primary">Back to all listings</button>
+        <% end %>
+</div>
+<img src="https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg" alt="ちぃたん☆">
+
 <h2><%= @listing.mascot_name %></h2>
 <p><strong>Based in:</strong> <%= @listing.location %></p>
 <p><strong>Rate:</strong> <%= @listing.rate_usd %></p>
