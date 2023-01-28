@@ -1,4 +1,6 @@
-<div class="position-static">
-  <h1>Mascots near you</h1>
-  <%= render "shared/mascot_card", object: @listings %>
+<h1>Mascots near you</h1>
+<div class="row gy-5">
+  <% @listings.each do |listing| %>
+    <%= render "shared/mascot_card", listing: listing %>
+  <% end %>
 </div>

@@ -10,3 +10,21 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+
+}
+
+.nav-item {
+  color: $dark;
+}
+
+.navbar-stroke {
+  border-bottom: solid $blue;
+  border-bottom-width: 10px;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: 900;
+}
