@@ -39,10 +39,10 @@
 
   <div class="col-4">
     <h3>My Mascots</h3>
-    <% @user_listings.each do |listing| %>
-      <div class="grid">
-        <div class="g-col-6"><%= listing.mascot_name %> - <%= listing.location %></div>
-      </div>
-    <% end %>
+    <div class="grid">
+      <% @user_listings.each do |listing| %>
+          <div class="g-col-6"><%= cl_image_tag listing.photo.key, height:100, crop: :fill %></div>
+      <% end %>
+    </div>
   </div>
 </div>
