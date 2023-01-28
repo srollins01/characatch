@@ -1,21 +1,4 @@
-<div class="container">
-  <h1>All Mascots</h1>
-
-  <% if @listings %>
-
-    <% @listings.each do |listing| %>
-      <%= link_to listing_path(listing) do %>
-        <div class="card my-3 me-3" style="width: 18rem;">
-          <img src="#" class="card-img-top" alt="mascot image">
-          <div class="card-body">
-            <h5 class="card-title"><%= listing.title %></h5>
-            <h6 class="card-subtitle mb-2 text-muted">$<%= listing.mascot_name %> /hr</h6><br>
-          </div>
-        </div>
-      <% end %>
-
-    <% end %>
-
-  <% end %>
-
+<div class="position-static">
+  <h1>Mascots near you</h1>
+  <%= render "shared/mascot_card", object: @listings %>
 </div>
