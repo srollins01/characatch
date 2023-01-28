@@ -1,16 +1,12 @@
-  <div class="row gy-5">
-    <% @listings.each do |listing| %>
-      <div class="col">
-        <%= link_to(listing_path(listing), class: "card-links") do %>
-          <div class="card bottom-stroke-red text-decoration-none" style="width: 18rem;">
-            <%= cl_image_tag(listing.photo.key, height: 200, alt: listing.mascot_name, class: "card-img-top") %>
-            <div class="card-body">
-              <h5 class="card-title"><%= listing.title %></h5>
-              <p class="card-text m-0">Meet <strong><%= listing.mascot_name %></strong>, <br>based in <%= listing.location %></p>
-              <p class="card-text">Hire at <strong><%= listing.rate_usd %></strong></p>
-            </div>
-          </div>
-        <% end %>
+<div class="col">
+  <%= link_to(listing_path(listing), class: "card-links") do %>
+    <div class="card bottom-stroke-red text-decoration-none" style="width: 18rem;">
+      <%= cl_image_tag(listing.photo.key, height: 200, alt: listing.mascot_name, class: "card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= listing.title %></h5>
+        <p class="card-text m-0">Meet <strong><%= listing.mascot_name %></strong>, based in <%= listing.location %></p>
+        <p class="card-text">Hire at <strong><%= listing.rate_usd %></strong></p>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>

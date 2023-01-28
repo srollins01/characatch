@@ -1,0 +1,20 @@
+<p><strong>Reviews</strong></p>
+
+<%= link_to "Write a review", new_listing_review_path if user_signed_in? %>
+
+<ul class="list-group">
+  <% @reviews.each do |review| %>
+    <li class="list-group-item">
+      <%= review.rating %>/5
+      <%= review.content %>
+
+      <% if current_user == review.user %>
+        <%= link_to "Edit", edit_review_path(review) %> |
+      <% end %>
+
+      <%= button_to "Destroy", review, method: :delete if current_user == review.user %>
+
+    </li>
+  <% end %>
+</ul>
+<br>
