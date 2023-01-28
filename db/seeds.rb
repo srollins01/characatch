@@ -82,4 +82,14 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
     user: User.all.sample
   })
 end
+
+30.times do
+  Review.create!({
+    content: "Characatch is the best site for mascots! ^w^",
+    rating: rand(1..5),
+    listing: Listing.all.sample,
+    user: User.all.sample
+  })
+end
+
 puts "Done"
