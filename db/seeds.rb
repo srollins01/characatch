@@ -74,20 +74,84 @@ User.create(nickname: "yann", email: "yann@email.com", password: "123456")
 User.create(nickname: "noemi", email: "noemi@email.com", password: "123456")
 User.create(nickname: "raj", email: "raj@email.com", password: "123456")
 
-20.times do
-  file = URI.open("https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg")
+# 20.times do
+#   file = URI.open("https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg")
 
-  mascot = Listing.new({
-    mascot_name: Faker::Creature::Animal.name,
-    title: "Lorem ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    location: PREFECTURES.sample,
+#   mascot = Listing.new({
+#     mascot_name: Faker::Creature::Animal.name,
+#     title: "Lorem ipsum",
+#     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+#     location: PREFECTURES.sample,
+#     hourly_rate: (15..150).to_a.sample,
+#     user: User.all.sample
+#   })
+
+#   mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
+#   mascot.save
+# end
+
+kumamon = {
+  file: "https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/2c/b3/ee7bea65b8e5b124fda69617ccfee6e6e787/kumamon.jpg",
+  mascot_name: "Kumamon",
+  title: "Cute Black Bear Friend",
+  description: "Kumamon (くまモン) is a mascot created by the government of Kumamoto Prefecture, Japan. It was created in 2010 for a campaign created to draw tourists to Kumamoto",
+  location: "Kumamoto"
+}
+
+funassyi = {
+  file: "https://content.fun-japan.jp/renewal-prod/cms/articles/content/160721D3039jpg_2021-11-19-09-31-02.jpg",
+  mascot_name: "Funassyi",
+  title: "Chiba's Unofficial Character",
+  description: "Funassyi is a fictional Japanese mascot character, unofficially representing the city of Funabashi, Chiba. It was created by a citizen of Funabashi.",
+  location: "Funabashi, Chiba"
+}
+
+sorajiro = {
+  file: "https://pbs.twimg.com/media/FCIfO3XUUAEqw-Z?format=jpg&name=large",
+  mascot_name: "Sorajiro",
+  title: "We All Love Sorajiro",
+  description: "Sorajiro, one of Japan's most beloved heroes for children, has featured on the live weather report on Nippon TV's daily news show “news every.” since 2007.",
+  location: "Shimbashi, Tokyo"
+}
+
+peririn = {
+  file: "https://i.pinimg.com/736x/aa/91/05/aa9105beab6d973591f9df7cadc6dedb--kanagawa-prefecture-japan.jpg",
+  mascot_name: "Peririn",
+  title: "Be complete",
+  description: "Peririn and Ogurin are much loved as the image characters of the Yokosuka Kaikoku Festival, and were created by cartoonist and direct descendent of Oguri.",
+  location: "Yokosuka, Kanagawa"
+}
+
+domokun = {
+  file: "https://www.curiosite.es/img/auto_paginas/w320/451.jpg",
+  mascot_name: "Domo-kun",
+  title: "DOMO DOMO DOMO",
+  description: "Domo (どーも くん, Dōmo-kun) is the official mascot of Japan's public broadcaster NHK, appearing in several 30-second stop-motion interstitial sketches.",
+  location: "Shibuya, Tokyo"
+}
+
+mascots = [kumamon, funassyi, sorajiro, peririn, domokun]
+
+def create_listing(mascot)
+  file = URI.open(mascot[:file])
+
+  new_mascot = Listing.new({
+    mascot_name: mascot[:mascot_name],
+    title: mascot[:title],
+    description: mascot[:description],
+    location: mascot[:location],
     hourly_rate: (15..150).to_a.sample,
     user: User.all.sample
   })
 
-  mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
-  mascot.save
+  new_mascot.photo.attach(io: file, filename: "#{mascot[:mascot_name]}.jpg", content_type: "image/jpg")
+  new_mascot.save
+end
+
+2.times do
+  mascots.each do |mascot|
+    create_listing(mascot)
+  end
 end
 
 30.times do
