@@ -90,3 +90,19 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
   mascot.save
 end
 puts "Done"
+
+users = User.all
+listings = Listing.all
+events = %i[Birthday Proposal Wedding Funeral Other]
+
+20.times do
+  new_book = Booking.new
+  new_book.user = users.sample
+  new_book.listing = listings.sample
+  new_book.event_type = events.sample
+  new_book.event_address = PREFECTURES.sample
+  new_book.start_time = Faker::Date.in_date_period(month: 1)
+  new_book.end_time = new_book.start_time
+  new_book.status = rand(0..3)
+  new_book.save
+end
