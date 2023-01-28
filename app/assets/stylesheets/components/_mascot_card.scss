@@ -1,0 +1,16 @@
+.card-links {
+  text-decoration: none;
+  color: $dark;
+}
+
+.bottom-stroke-red:hover {
+  color: $dark;
+  border-bottom: solid $blue;
+  border-bottom-width: 10px;
+  transition: 0.3s;
+}
+
+.card-img-top {
+  object-fit: cover;
+  object-position: 50% 10%;
+}
