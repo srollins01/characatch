@@ -1,4 +1,4 @@
-<h1>Welcome <%= current_user.email %>!</h1>
+<h1>Welcome <%= current_user.nickname %>!</h1>
 <div class="d-flex" style="gap: 50px;">
   <div class="col-8">
     <h3>My Bookings</h3>
@@ -39,9 +39,9 @@
 
   <div class="col-4">
     <h3>My Mascots</h3>
-    <div class="grid">
+    <div class="row col-auto">
       <% @user_listings.each do |listing| %>
-          <div class="g-col-6"><%= cl_image_tag listing.photo.key, height:100, crop: :fill %></div>
+          <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
       <% end %>
     </div>
   </div>
