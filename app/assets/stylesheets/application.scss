@@ -9,6 +9,37 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/mascot_card";
 @import "pages/index";
 
 @import "bootstrap/scss/bootstrap";
+
+.bottom-stroke-blue {
+  border-bottom: solid $blue;
+  border-bottom-width: 10px;
+}
+
+.bottom-stroke-red {
+  border-bottom: solid $red;
+  border-bottom-width: 10px;
+}
+
+.bottom-stroke-yellow {
+  border-bottom: solid $yellow;
+  border-bottom-width: 10px;
+}
+
+.left-stroke-blue {
+  border-left: solid $blue;
+  border-left-width: 10px;
+}
+
+.left-stroke-red {
+  border-left: solid $red;
+  border-left-width: 10px;
+}
+
+.left-stroke-yellow {
+  border-left: solid $yellow;
+  border-left-width: 10px;
+}
