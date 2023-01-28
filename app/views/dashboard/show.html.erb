@@ -1,7 +1,48 @@
 <h1>Welcome <%= current_user.email %>!</h1>
-<ul>
-  <% @user_listings.each do |listing| %>
-    <li><%= listing.mascot_name %></li>
-  <% end %>
-</ul>
-<p><%= @user_bookings %></p>
+<div class="d-flex" style="gap: 50px;">
+  <div class="col-8">
+    <h3>My Bookings</h3>
+    <% @user_bookings.each do |booking| %>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
+            <small><%= booking.start_time %></small>
+          </div>
+          <p class="mb-1">Event: <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+          <small>Location: <%= booking.event_address %></small>
+          <em><small>Status: <%= booking.status %></small></em>
+        </a>
+      </div>
+    <% end %>
+    <div class="mt-4">
+      <h3>My Mascots Jobs</h3>
+      <% @user_listings.each do |listing| %>
+        <div>
+          <% listing.bookings.each do |booking| %>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
+                  <small><%= booking.start_time %></small>
+                </div>
+                <p class="mb-1">Event: <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+                <small>Location: <%= booking.event_address %></small>
+                <em><small>Status: <%= booking.status %></small></em>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <h3>My Mascots</h3>
+    <% @user_listings.each do |listing| %>
+      <div class="grid">
+        <div class="g-col-6"><%= listing.mascot_name %> - <%= listing.location %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
