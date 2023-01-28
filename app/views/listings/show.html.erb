@@ -1,5 +1,5 @@
 <div class="row">
-    <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name, class: "col-3")%>
+  <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-3")%>
   <div class="col-9">
     <div class="d-flex justify-content-between">
       <h1><%= @listing.mascot_name %></h1>
@@ -12,8 +12,8 @@
       </div>
     </div>
     <div>
-      <p class="m-0"><strong>Based in:</strong> <%= @listing.location %></p>
-      <p><strong>Rate:</strong> <%= @listing.rate_usd %></p>
+      <p class="m-0"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></p>
+      <p><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></p>
       <h3 class="mt-5"><%= @listing.title %></h2>
       <p><%= @listing.description %></p>
     </div>
