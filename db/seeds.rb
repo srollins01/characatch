@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 PREFECTURES = [
   'Hokkaidō',
   'Aomori',
@@ -73,7 +75,9 @@ User.create(nickname: "noemi", email: "noemi@email.com", password: "123456")
 User.create(nickname: "raj", email: "raj@email.com", password: "123456")
 
 20.times do
-  Listing.create!({
+  file = URI.open("https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg")
+
+  mascot = Listing.new({
     mascot_name: Faker::Creature::Animal.name,
     title: "Lorem ipsum",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -81,6 +85,9 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
     hourly_rate: (15..150).to_a.sample,
     user: User.all.sample
   })
+
+  mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
+  mascot.save
 end
 puts "Done"
 
