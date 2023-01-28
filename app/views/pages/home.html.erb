@@ -5,10 +5,10 @@
   <div class="mt-5">
     <h1>Our most popular characters</h1>
   </div>
-  <div class="d-flex mt-3">
+  <div class="grid mt-3">
     <% @listings.first(4).each do |listing| %>
       <%= link_to listing_path(listing) do %>
-        <div class="card my-3 me-3" style="width: 18rem;">
+        <div class="g-col-3 card my-3 me-3" style="width: 18rem;">
           <img src="#" class="card-img-top" alt="mascot image">
           <div class="card-body">
             <h5 class="card-title"><%= listing.title %></h5>
