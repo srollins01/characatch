@@ -89,6 +89,16 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
   mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
   mascot.save
 end
+
+30.times do
+  Review.create!({
+    content: "Characatch is the best site for mascots! ^w^",
+    rating: rand(1..5),
+    listing: Listing.all.sample,
+    user: User.all.sample
+  })
+end
+
 puts "Done"
 
 users = User.all
