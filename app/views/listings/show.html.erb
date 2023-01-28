@@ -1,8 +1,14 @@
  <div class="d-flex justify-content-between">
-        <h1><%= @listing.title %></h1>
-        <%= link_to listings_path do %>
-          <button class="btn btn-primary">Back to all listings</button>
-        <% end %>
+  <h1><%= @listing.title %></h1>
+  <div>
+    <%= link_to new_listing_booking_path(@listing) do %>
+      <button class="btn btn-success">Book this mascot!</button>
+    <% end %>
+
+    <%= link_to listings_path do %>
+      <button class="btn btn-primary">Back to all listings</button>
+    <% end %>
+  </div>
 </div>
 <img src="https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg" alt="ちぃたん☆">
 
