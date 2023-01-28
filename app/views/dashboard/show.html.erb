@@ -1,5 +1,5 @@
 <h1>Welcome <%= current_user.nickname %>!</h1>
-<div class="d-flex" style="gap: 50px;">
+<div class="d-flex mt-4" style="gap: 50px;">
   <div class="col-8">
     <h3>My Bookings</h3>
     <% @user_bookings.each do |booking| %>
@@ -7,15 +7,15 @@
         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
-            <small><%= booking.start_time %></small>
+            <small><%= booking.start_time.strftime("%m/%d/%Y at %I:%M%p") %></small>
           </div>
-          <p class="mb-1">Event: <%= booking.event_type %> | Comments: <%= booking.comment %></p>
-          <small>Location: <%= booking.event_address %></small>
+          <p class="mb-1"><i class="fa-solid fa-calendar"></i>   <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+          <small>   <%= booking.event_address %></small>
           <em><small>Status: <%= booking.status %></small></em>
         </a>
       </div>
     <% end %>
-    <div class="mt-4">
+    <div class="my-4">
       <h3>My Mascots Jobs</h3>
       <% @user_listings.each do |listing| %>
         <div>
@@ -24,10 +24,10 @@
               <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
-                  <small><%= booking.start_time %></small>
+                  <small><%= booking.start_time.strftime("%m/%d/%Y at %I:%M%p") %></small>
                 </div>
-                <p class="mb-1">Event: <%= booking.event_type %> | Comments: <%= booking.comment %></p>
-                <small>Location: <%= booking.event_address %></small>
+                <p class="mb-1"><i class="fa-solid fa-calendar"></i>  <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+                <small><i class="fa-solid fa-location-dot"></i>   <%= booking.event_address %></small>
                 <em><small>Status: <%= booking.status %></small></em>
               </a>
             </div>
