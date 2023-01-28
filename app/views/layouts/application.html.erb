@@ -6,8 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@200;400;600;700;800;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-white">
       <div class="container-fluid">
         <%= link_to "CharaCatch", root_path, class: "navbar-brand" %>
@@ -16,11 +20,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
               <%= link_to "Mascots", listings_path, class: "nav-link" %>
             </li>
-          </ul>
-          <ul class="navbar-nav mb-2 mb-lg-0">
           <% if user_signed_in? %>
               <li class="nav-item">
                 <a class="nav-link" href="/dashboard">Dashboard</a>
