@@ -60,8 +60,8 @@ PREFECTURES = [
 ]
 
 puts "Destroying existing records of Users and Listings"
-User.destroy_all
 Listing.destroy_all
+User.destroy_all
 puts "Done deletion"
 
 puts "Creating new records of Users and Listings"
@@ -86,7 +86,7 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
     user: User.all.sample
   })
 
-  mascot.photo.attach(io: file, filename: "chiitan.png", content_type: "image/jpg")
+  mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
   mascot.save
 end
 puts "Done"
