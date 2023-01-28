@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 PREFECTURES = [
   'Hokkaidō',
   'Aomori',
@@ -58,8 +60,8 @@ PREFECTURES = [
 ]
 
 puts "Destroying existing records of Users and Listings"
-User.destroy_all
 Listing.destroy_all
+User.destroy_all
 puts "Done deletion"
 
 puts "Creating new records of Users and Listings"
@@ -73,7 +75,9 @@ User.create(nickname: "noemi", email: "noemi@email.com", password: "123456")
 User.create(nickname: "raj", email: "raj@email.com", password: "123456")
 
 20.times do
-  Listing.create!({
+  file = URI.open("https://contents.oricon.co.jp/photo/img/4000/4243/detail/img660/1534140350557.jpg")
+
+  mascot = Listing.new({
     mascot_name: Faker::Creature::Animal.name,
     title: "Lorem ipsum",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -81,5 +85,24 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
     hourly_rate: (15..150).to_a.sample,
     user: User.all.sample
   })
+
+  mascot.photo.attach(io: file, filename: "chiitan.jpg", content_type: "image/jpg")
+  mascot.save
 end
 puts "Done"
+
+users = User.all
+listings = Listing.all
+events = %i[Birthday Proposal Wedding Funeral Other]
+
+20.times do
+  new_book = Booking.new
+  new_book.user = users.sample
+  new_book.listing = listings.sample
+  new_book.event_type = events.sample
+  new_book.event_address = PREFECTURES.sample
+  new_book.start_time = Faker::Date.in_date_period(month: 1)
+  new_book.end_time = new_book.start_time
+  new_book.status = rand(0..3)
+  new_book.save
+end
