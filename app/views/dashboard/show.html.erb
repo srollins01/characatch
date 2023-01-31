@@ -39,6 +39,9 @@
 
   <div class="col-4">
     <h3>My Mascots</h3>
+    <%= link_to new_listing_path do %>
+      <button type="button" class="btn btn-primary mb-3">New Mascot</button>
+    <% end %>
     <div class="row col-auto">
       <% @user_listings.each do |listing| %>
           <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
