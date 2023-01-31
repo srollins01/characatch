@@ -14,7 +14,9 @@
 
     <nav class="navbar navbar-stroke navbar-expand-lg bg-body-tertiary sticky-top bg-white">
       <div class="container-fluid">
-        <%= link_to "CharaCatch", root_path, class: "navbar-brand" %>
+        <%= link_to root_path, class: "navbar-brand" do%>
+          <span>Chara</span>Catch!
+        <% end %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,8 +29,7 @@
             </li>
           <% if user_signed_in? %>
               <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-                <%# <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+                <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
               </li>
             <% else %>
             <% end %>

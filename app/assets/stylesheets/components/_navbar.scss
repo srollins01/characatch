@@ -11,20 +11,27 @@
   width: 40px;
 }
 
-.navbar {
-
+span {
+  color: $red;
 }
 
-.nav-item {
+a.navbar-brand {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+a.nav-link {
   color: $dark;
+  font-weight: 600;
+}
+
+a.nav-link:hover {
+  color: $red;
+  transition: 0.3s;
 }
 
 .navbar-stroke {
-  border-bottom: solid $blue;
+  border-bottom: solid;
   border-bottom-width: 10px;
-}
-
-.navbar-brand {
-  font-size: 1.5em;
-  font-weight: 900;
+  border-image: linear-gradient(to right, $blue 15%, $yellow 15%, $yellow 30%, $red 30%) 5;
 }

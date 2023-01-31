@@ -2,20 +2,37 @@
   <div>
     <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1674734420/wqtevh0jzjsvz82x3plu.png" alt="Catch your character today!">
   </div>
+
+  <!-- code a "How it works" section -->
+  <div class="mt-5">
+    <div class="container">
+      <h1>How it works</h1>
+      <div class="cards-main">
+        <div class="card-step">
+          <h3>Browse</h3>
+          <p>Look for your favorite mascot in our listings of over 2000 mascots!</p>
+        </div>
+
+        <div class="card-step">
+          <h3>Book</h3>
+          <p>Simple one step booking</p>
+        </div>
+
+        <div class="card-step">
+          <h3> Enjoy!</h3>
+          <p>Your favorite mascot will show up at your event.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="mt-5">
     <h1>Our most popular characters</h1>
   </div>
-  <div class="d-flex mt-3">
-    <% @listings.first(4).each do |listing| %>
+  <div class="d-flex mt-3" style="gap: 50px;">
+    <% @listings.first(3).each do |listing| %>
       <%= link_to listing_path(listing) do %>
-        <div class="card my-3 me-3" style="width: 18rem;">
-          <img src="#" class="card-img-top" alt="mascot image">
-          <div class="card-body">
-            <h5 class="card-title"><%= listing.title %></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= listing.mascot_name %></h6><br>
-            <p class="card-text">$<%= listing.hourly_rate %> /hr</p>
-          </div>
-        </div>
+        <%= render "shared/mascot_card", listing: listing %>
       <% end %>
     <% end %>
   </div>

@@ -9,6 +9,7 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
 @import "components/mascot_card";
 @import "components/navbar";
 @import "pages/index";
@@ -16,7 +17,7 @@
 @import "bootstrap/scss/bootstrap";
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .bottom-stroke-blue {

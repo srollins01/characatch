@@ -3,8 +3,11 @@
   color: $dark;
 }
 
-.bottom-stroke-red:hover {
+.bottom-stroke-red {
   color: $dark;
+}
+
+.bottom-stroke-red:hover {
   border-bottom: solid $blue;
   border-bottom-width: 10px;
   transition: 0.3s;

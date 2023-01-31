@@ -1,12 +1,18 @@
 <div class="container my-5"></div>
-  <div class="row mx-5">
-    <div class="d-flex justify-content-between">
-      <h1>Book <%= @listing.mascot_name %> for your event</h1>
-      <%= link_to listing_path(@listing) do %>
-        <button class="btn btn-secondary">Back to mascot's details</button>
-      <% end %>
+  <div class="row mt-5">
+    <div class="col-9">
+      <div class="d-flex justify-content-between">
+        <h1>Book <%= @listing.mascot_name %> for your event</h1>
+        <%= link_to listing_path(@listing) do %>
+          <button class="btn btn-secondary">Back to mascot's details</button>
+        <% end %>
+      </div>
     </div>
-    <%= render 'form', article: [@listing, @booking] %>
+  </div>
+  <div class="row row-col-6">
+    <div class="col-9">
+      <%= render 'form', article: [@listing, @booking] %>
+    </div>
   </div>
 
 
