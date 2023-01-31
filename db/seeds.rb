@@ -209,6 +209,14 @@ sorayan = {
   location: "Osaka"
 }
 
+kanpachiro = {
+  file: "https://pbs.twimg.com/media/ENcqXWbU8AATtAd.jpg",
+  mascot_name: "Kanpachiro",
+  title: "Here for business",
+  description: "Kanpachiro is the dancing fish-headed businessman mascot of Kanoya City in Kagoshima Prefecture. The fish that serves as his head is the specialty product of Kanoya City.",
+  location: "Kanoya, Kagoshima"
+}
+
 # mascot = {
 #   file:
 #   mascot_name:
@@ -217,7 +225,7 @@ sorayan = {
 #   location:
 # }
 
-mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan]
+mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan, kanpachiro]
 
 def create_listing(mascot)
   file = URI.open(mascot[:file])
