@@ -1,0 +1,9 @@
+<%= simple_form_for [@listing] do |f| %>
+    <%= f.input :mascot_name, label: 'Your mascot name', as: :text %>
+    <%= f.input :title, label: 'Title Description', as: :text %>
+  <%= f.input :description, label: 'Details about your mascot (personality history etc)', as: :text %>
+  <%= f.input :location, label: 'Mascot Residence', as: :text %>
+  <%= f.input :hourly_rate, label: 'Desired wage (hourly)', as: :integer %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>

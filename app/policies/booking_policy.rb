@@ -13,4 +13,12 @@ class BookingPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def update?
+    @booking.user = user
+  end
+
+  def accept?
+    true
+  end
 end
