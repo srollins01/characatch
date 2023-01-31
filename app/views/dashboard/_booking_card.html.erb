@@ -1,0 +1,11 @@
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
+      <small><%= booking.start_time.strftime("%m/%d/%Y at %I:%M%p") %></small>
+    </div>
+    <p class="mb-1"><i class="fa-solid fa-calendar"></i>   <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+    <small>   <%= booking.event_address %></small>
+    <em><small>Status: <%= booking.status %></small></em>
+  </a>
+</div>
