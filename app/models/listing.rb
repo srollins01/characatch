@@ -9,6 +9,13 @@ class Listing < ApplicationRecord
   validates :location, presence: true
   validates :hourly_rate, presence: true, numericality: { greater_than: 0 }
 
+  include PgSearch::Model
+  pg_search_scope :search_by_keyword,
+  against: [:mascot_name, :location, :title, :description],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def rate_usd
     "$#{hourly_rate}/hour"
   end

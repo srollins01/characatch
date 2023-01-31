@@ -1,7 +1,12 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_policy_scoped, only: :index
   def index
-    @listings = policy_scope(Listing)
+    if params[:query].present?
+      @listings = Listing.search_by_keyword(params[:query])
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
