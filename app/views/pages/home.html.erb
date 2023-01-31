@@ -30,7 +30,7 @@
     <h1>Our most popular characters</h1>
   </div>
   <div class="d-flex mt-3" style="gap: 50px;">
-    <% @listings.first(3).each do |listing| %>
+    <% @listings.first(15).each do |listing| %>
       <%= link_to listing_path(listing) do %>
         <%= render "shared/mascot_card", listing: listing %>
       <% end %>

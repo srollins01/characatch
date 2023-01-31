@@ -12,6 +12,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+  </head>
+
+  <body>
     <nav class="navbar navbar-stroke navbar-expand-lg bg-body-tertiary sticky-top bg-white">
       <div class="container-fluid">
         <%= link_to root_path, class: "navbar-brand" do%>
@@ -44,9 +49,7 @@
         </div>
       </div>
     </nav>
-  </head>
 
-  <body>
     <div class="container">
       <%# flash messages %>
       <p class="alert"><%= alert %></p>
