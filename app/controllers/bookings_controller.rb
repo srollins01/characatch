@@ -18,6 +18,9 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+  end
+
   private
 
   def set_listing

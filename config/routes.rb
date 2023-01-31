@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[index new create]
   end
 
+  get "/bookings", to: "bookings#accept", as: :accept
   get "/dashboard", to: "dashboard#show"
   resources :reviews, only: %i[edit update destroy]
 end
