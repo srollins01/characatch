@@ -235,10 +235,8 @@ def create_listing(mascot)
   new_mascot.save
 end
 
-2.times do
-  mascots.each do |mascot|
-    create_listing(mascot)
-  end
+mascots.each do |mascot|
+  create_listing(mascot)
 end
 
 30.times do
