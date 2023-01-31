@@ -4,7 +4,23 @@
       <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
       <small><%= booking.start_time.strftime("%m/%d/%Y at %I:%M%p") %></small>
     </div>
-    <p class="mb-1"><i class="fa-solid fa-calendar"></i>   <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+    <div class="d-flex w-100 justify-content-between">
+      <p class="mb-1"><i class="fa-solid fa-calendar"></i>   <%= booking.event_type %> | Comments: <%= booking.comment %></p>
+      <% if booking.status == "completed" %>
+      <% elsif booking.listing.user != current_user %>
+        <div>
+          <button class="btn btn-success">Edit</button>
+          <button class="btn btn-secondary">Cancel booking</button>
+        </div>
+      <% elsif booking.listing.user == current_user && booking.status != "pending" %>
+        <button class="btn btn-secondary">Cancel booking</button>
+      <% else %>
+        <div>
+          <button class="btn btn-success">Accept</button>
+          <button class="btn btn-secondary">Reject</button>
+        </div>
+      <% end %>
+    </div>
     <small>   <%= booking.event_address %></small>
     <em><small>Status: <%= booking.status %></small></em>
   </a>
