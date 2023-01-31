@@ -1,4 +1,14 @@
 <h1>Mascots near you</h1>
+
+<%= form_with url: listings_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a mascot"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div class="row row-cols-auto gy-5">
   <% @listings.each do |listing| %>
     <%= render "shared/mascot_card", listing: listing %>
