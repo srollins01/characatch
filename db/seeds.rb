@@ -129,8 +129,95 @@ domokun = {
   description: "Domo (どーも くん, Dōmo-kun) is the official mascot of Japan's public broadcaster NHK, appearing in several 30-second stop-motion interstitial sketches.",
   location: "Shibuya, Tokyo"
 }
+chiitan = {
+  file: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Chiitan.jpg",
+  mascot_name: "Chiitan",
+  title: "Otterly Adorable",
+  description: "Chiitan is a Japanese mascot which was formerly a self-declared unofficial representative of the small port city of Susaki. It is a self-described 0-year-old fairy baby otter with no gender that wears a turtle as a hat.",
+  location: "Susaki, Kōchi"
+}
 
-mascots = [kumamon, funassyi, sorajiro, peririn, domokun]
+mikyan = {
+  file: "https://i.pinimg.com/474x/3b/59/2b/3b592b9a2bfe6fc6b25f155fac1ce547--mascot-design-mandarin-oranges.jpg",
+  mascot_name: "Mikyan",
+  title: "Dog fused with an orange",
+  description: "Mikyan is the official mascot of Ehime Prefecture. He combines the motifs of a mikan orange and a dog. Mikan oranges are a local speciality of Ehime.",
+  location: "Ehime, Shikoku"
+}
+
+barysan = {
+  file: "https://pbs.twimg.com/media/FD9xkCyaQAATHHN.jpg",
+  mascot_name: "Barysan",
+  title: "The Competition",
+  description: "Barysan is the yurukyara from Imabari city in Ehime Prefecture. In 2011, he was the runner-up in Japan's Yurukyara Grand Prix and won first place in 2012.",
+  location: "Ehime, Shikoku"
+}
+
+hakogeo = {
+  file: "https://pbs.twimg.com/media/DcRnJ7UV4AI2r7a.jpg",
+  mascot_name: "Hakogeo",
+  title: "Let's Soak!",
+  description: "Hakogeo, the mascot of Hakone Geopark. Cute, bubbly, and always dressed inappropriately",
+  location: "Hakone, Kanagawa"
+}
+
+kaparu = {
+  file: "https://hyperjapan.co.uk/wp-content/uploads/2020/10/Kaparu.jpg",
+  mascot_name: "Kaparu",
+  title: "Goblin of Deep Shame",
+  description: "KAPPA comes from a folk tale of SHIKI-city, which is told to live in the rivers and its head dish always needs wet! Enjoy KAPARU's dance and music!",
+  location: "Saitama"
+}
+
+swingy = {
+  file: "https://www.city.yokohama.lg.jp/naka/shokai/mascot/swingy.images/0001_20181108.jpg",
+  mascot_name: "Swingy",
+  title: "Born and raised in Daisanbashi",
+  description: "He is a jazz player and an entertainer with a service spirit. He likes events and even fly to small gatherings on the street corner. The sound of the saxophone may be echoed on the roof of the twilight Daishin Bridge. If you feel like it, come and look for it.",
+  location: "Naka, Yokohama"
+}
+
+nazo = {
+  file: "https://pbs.twimg.com/media/Dgn5ekJVMAApb-g.jpg",
+  mascot_name: "Nazo-no-sakana",
+  title: "Mysterious",
+  description: "Nazo No Sakana, the Chiba Marines' mascot, first gained fame by vomiting out his own skeleton.",
+  location: "Chiba"
+}
+
+peko = {
+  file: "https://64.media.tumblr.com/d0f6015672c18dcb37fc2cd51755bb6a/tumblr_p9mfzaaNHB1xulpojo1_1280.jpg",
+  mascot_name: "Pekochan",
+  title: "Peron peron",
+  description: "Fujiya's mascot is Peko-chan, a girl in pigtails licking her lips. Peko-chan is a well-known marketing icon in Japan, where life-sized dolls of the mascot are commonly seen nationwide standing outside the chain's stores.",
+  location: "Yokohama"
+}
+
+sanomaru = {
+  file: "https://pbs.twimg.com/media/DSnM6xhV4AA7ITQ.jpg",
+  mascot_name: "Sanomaru",
+  title: "Available to eat",
+  description: "Sanomaru is a samurai mascot to promote his local town, Sano-city in Tochigi. He wears symbols of famous local foods ramen noodle bowl and imo-furai",
+  location: "Sano, Tochigi"
+}
+
+sorayan = {
+  file: "https://www.ana-cooljapan.com/destinations/img/osaka/itamiairport/216-01.jpg",
+  mascot_name: "Sorayan",
+  title: "We can fly together",
+  description: "Sorayan from Osaka's Itami Airport. Designed to look like an airplane, Sorayan has a round white body and speaks with a unique Kansai accent.",
+  location: "Osaka"
+}
+
+# mascot = {
+#   file:
+#   mascot_name:
+#   title:
+#   description:
+#   location:
+# }
+
+mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan]
 
 def create_listing(mascot)
   file = URI.open(mascot[:file])
