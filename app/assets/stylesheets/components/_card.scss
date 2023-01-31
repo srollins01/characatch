@@ -1,0 +1,23 @@
+.cards-main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-step {
+  width: 160px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.card-step img {
+  width: 120px;
+}
+
+.card-step h3 {
+  text-align: center;
+}
+
+.card-step p {
+  font-size: 14px;
+}
