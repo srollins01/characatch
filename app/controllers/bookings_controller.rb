@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_listing
+  before_action :set_listing, except: :accept
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -18,7 +19,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to dashboard_path
+    else
+
+    end
+  end
+
   def accept
+    @bookings = Bookings
+    authorize @bookings
   end
 
   private
