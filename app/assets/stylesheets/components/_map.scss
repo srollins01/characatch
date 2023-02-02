@@ -1,0 +1,43 @@
+.mapboxgl-popup {
+  max-width: 150px;
+}
+
+.mapboxgl-popup-content {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+}
+
+.info-window {
+  overflow: hidden;
+  height: 100px;
+  background: white;
+  display: flex;
+  align-items: top;
+}
+
+.info-window-img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+  margin-left: 16px;
+}
+
+.info-window h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.info-window p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.info-window .info-window-infos {
+  padding: 8px;
+}
