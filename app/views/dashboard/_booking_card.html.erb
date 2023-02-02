@@ -10,7 +10,9 @@
       <% elsif booking.status == "declined" %>
       <% elsif booking.listing.user != current_user %>
         <div>
-          <button class="btn btn-success">Edit</button>
+          <%= link_to edit_listing_booking_path(booking.listing.id, booking.id) do %>
+            <button type="button" class="btn btn-success">Edit booking</button>
+          <% end %>
           <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
             <%= f.input :id, as: :hidden %>
             <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
