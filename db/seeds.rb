@@ -59,12 +59,13 @@ PREFECTURES = [
   'Okinawa'
 ]
 
-puts "Destroying existing records of Users and Listings"
+puts "Destroying existing records of Users, Listings, Reviews and Bookings..."
 Listing.destroy_all
 User.destroy_all
 puts "Done deletion"
 
-puts "Creating new records of Users and Listings"
+puts "Creating new records of Users..."
+
 User.create!(nickname: "sarahR", email: "sarah@email.com", password: "123456")
 User.create(nickname: "tanao", email: "tanner@email.com", password: "123456")
 User.create(nickname: "dani", email: "danielle@email.com", password: "123456")
@@ -225,6 +226,8 @@ kanpachiro = {
 #   location:
 # }
 
+puts "Follow by creating new records of Listings..."
+
 mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan, kanpachiro]
 
 def create_listing(mascot)
@@ -247,16 +250,32 @@ mascots.each do |mascot|
   create_listing(mascot)
 end
 
-30.times do
+puts "Next, creating new records of Reviews..."
+
+COMMENTS = [
+  "Characatch is the best site for mascots! ^w^",
+  "Thank you for showing up at our event",
+  "Your mascot is really cute, thanks",
+  "Best mascot in town! :) Definitely wanna come back for next event!",
+  "Well done, thanks!",
+  "Thank you",
+  "Nice",
+  "Thanks",
+  "Love this mascot and how he's so interactive around the kids! All the kids loved him!!",
+  "Overall is good. Wish he could have dance though",
+  "No issue",
+  "Thank you very much!"
+]
+
+40.times do
   Review.create!({
-    content: "Characatch is the best site for mascots! ^w^",
-    rating: rand(1..5),
+    content: COMMENTS.sample,
+    rating: rand(3..5),
     listing: Listing.all.sample,
     user: User.all.sample
   })
 end
 
-puts "Done"
 
 users = User.all
 listings = Listing.all
@@ -273,3 +292,5 @@ events = %i[Birthday Proposal Wedding Funeral Other]
   new_book.status = rand(0..3)
   new_book.save
 end
+
+puts "Done"
