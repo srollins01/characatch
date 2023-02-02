@@ -1,43 +1,45 @@
-<div class="row">
-  <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-3")%>
-  <div class="col-9">
-    <div class="d-flex justify-content-between">
-      <h1><%= @listing.mascot_name %></h1>
-      <div class="text-decoration-none">
-        <%= link_to new_listing_booking_path(@listing) do %>
-          <button class="btn btn-success">Book this mascot!</button>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-3")%>
+    <div class="col-9">
+      <div class="d-flex justify-content-between">
+        <h1><%= @listing.mascot_name %></h1>
+        <div class="text-decoration-none">
+          <%= link_to new_listing_booking_path(@listing) do %>
+            <button class="btn btn-success">Book this mascot!</button>
+          <% end %>
 
 
+        </div>
+      </div>
+      <div>
+        <p class="m-0"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></p>
+        <p><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></p>
+        <h3 class="mt-5"><%= @listing.title %></h2>
+        <p><%= @listing.description %></p>
       </div>
     </div>
-    <div>
-      <p class="m-0"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></p>
-      <p><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></p>
-      <h3 class="mt-5"><%= @listing.title %></h2>
-      <p><%= @listing.description %></p>
-    </div>
   </div>
-</div>
 
- <div class="mt-5">
-  <h3>Reviews</h3>
+  <div class="mt-5">
+    <h3>Reviews</h3>
 
-  <!-- <% if user_signed_in? %>
-  <%= link_to "Write a review", new_listing_review_path(@listing), class:"btn btn-primary m-3" %>
-  <% end %> -->
+    <!-- <% if user_signed_in? %>
+    <%= link_to "Write a review", new_listing_review_path(@listing), class:"btn btn-primary m-3" %>
+    <% end %> -->
 
-  <ul class="list-group left-stroke-blue">
-    <% if @listing.reviews.count > 0 %>
-      <% @listing.reviews.each do |review| %>
-        <li class="list-group-item">
-          <span class="review-star"><%= icon('fa-solid', 'star') * review.rating %></span><br>
-          <%= review.content %><br>
-          <strong><%= review.user.nickname %></strong>
-        </li>
+    <ul class="list-group left-stroke-blue">
+      <% if @listing.reviews.count > 0 %>
+        <% @listing.reviews.each do |review| %>
+          <li class="list-group-item">
+            <span class="review-star"><%= icon('fa-solid', 'star') * review.rating %></span><br>
+            <%= review.content %><br>
+            <strong><%= review.user.nickname %></strong>
+          </li>
+        <% end %>
+      <% else %>
+        <li class="list-group-item">No Reviews</li>
       <% end %>
-    <% else %>
-      <li class="list-group-item">No Reviews</li>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>

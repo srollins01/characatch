@@ -1,0 +1,9 @@
+<%= link_to(listing_path(listing), class: "card-links") do %>
+  <div class="info-window">
+    <div class="nfo-window-infos">
+      <h5><%= listing.mascot_name %></h5>
+      <p>$<%= listing.hourly_rate %>/hr</p>
+    </div>
+    <%= cl_image_tag(listing.photo.key, height: 100, alt: listing.mascot_name, class: "info-window-img") %>
+  </div>
+<% end %>
