@@ -14,11 +14,7 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    @booking.user = user
-  end
-
-  def accept?
-    true
+  def booking_update?
+    record.listing.user == user
   end
 end

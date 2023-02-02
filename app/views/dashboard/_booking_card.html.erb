@@ -1,5 +1,5 @@
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+  <div class="list-group-item">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Mascot: <%= booking.listing.mascot_name %></h5>
       <small><%= booking.start_time.strftime("%m/%d/%Y at %I:%M%p") %></small>
@@ -7,21 +7,38 @@
     <div class="d-flex w-100 justify-content-between">
       <p class="mb-1"><i class="fa-solid fa-calendar"></i>   <%= booking.event_type %> | Comments: <%= booking.comment %></p>
       <% if booking.status == "completed" %>
+      <% elsif booking.status == "declined" %>
       <% elsif booking.listing.user != current_user %>
         <div>
           <button class="btn btn-success">Edit</button>
-          <button class="btn btn-secondary">Cancel booking</button>
+          <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+            <%= f.input :id, as: :hidden %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
+            <%= f.submit 'Cancel booking', class: 'btn btn-secondary' %>
+          <% end %>
         </div>
       <% elsif booking.listing.user == current_user && booking.status != "pending" %>
-        <button class="btn btn-secondary">Cancel booking</button>
+          <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+            <%= f.input :id, as: :hidden %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
+            <%= f.submit 'Cancel booking', class: 'btn btn-secondary' %>
+          <% end %>
       <% else %>
-        <div>
-          <button class="btn btn-success">Accept</button>
-          <button class="btn btn-secondary">Reject</button>
+        <div class = "d-flex">
+          <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+            <%= f.input :id, as: :hidden %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-success' %>
+          <% end %>
+          <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+            <%= f.input :id, as: :hidden %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
+            <%= f.submit 'Decline', class: 'btn btn-success' %>
+          <% end %>
         </div>
       <% end %>
     </div>
     <small>   <%= booking.event_address %></small>
     <em><small>Status: <%= booking.status %></small></em>
-  </a>
+  </div>
 </div>

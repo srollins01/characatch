@@ -11,9 +11,8 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[index new create]
   end
 
-  resources :bookings, only: [:update]
-
-  get "/bookings/accept", to: "bookings#accept", as: :accept
+  # resource :bookings, only: [:update]
   get "/dashboard", to: "dashboard#show"
+  patch "/dashboard", to: "dashboard#booking_update", as: :booking_update
   resources :reviews, only: %i[edit update destroy]
 end
