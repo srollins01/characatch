@@ -64,7 +64,7 @@ Listing.destroy_all
 User.destroy_all
 puts "Done deletion"
 
-puts "Creating new records of Users..."
+puts "Creating 8 new records of Users..."
 
 User.create!(nickname: "sarahR", email: "sarah@email.com", password: "123456")
 User.create(nickname: "tanao", email: "tanner@email.com", password: "123456")
@@ -92,7 +92,7 @@ User.create(nickname: "raj", email: "raj@email.com", password: "123456")
 # end
 
 kumamon = {
-  file: "https://japantoday-asset.scdn3.secure.raxcdn.com/img/store/2c/b3/ee7bea65b8e5b124fda69617ccfee6e6e787/kumamon.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341948/spyzh3gzyexl8xti3pet.jpg",
   mascot_name: "Kumamon",
   title: "Cute Black Bear Friend",
   description: "Kumamon (くまモン) is a mascot created by the government of Kumamoto Prefecture, Japan. It was created in 2010 for a campaign created to draw tourists to Kumamoto",
@@ -100,7 +100,7 @@ kumamon = {
 }
 
 funassyi = {
-  file: "https://content.fun-japan.jp/renewal-prod/cms/articles/content/160721D3039jpg_2021-11-19-09-31-02.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341873/qwjerqdkqqzuuu6xiwdo.jpg",
   mascot_name: "Funassyi",
   title: "Chiba's Unofficial Character",
   description: "Funassyi is a fictional Japanese mascot character, unofficially representing the city of Funabashi, Chiba. It was created by a citizen of Funabashi.",
@@ -108,7 +108,7 @@ funassyi = {
 }
 
 sorajiro = {
-  file: "https://pbs.twimg.com/media/FCIfO3XUUAEqw-Z?format=jpg&name=large",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342040/uxjvosua6kezkvazmnbh.jpg",
   mascot_name: "Sorajiro",
   title: "We All Love Sorajiro",
   description: "Sorajiro, one of Japan's most beloved heroes for children, has featured on the live weather report on Nippon TV's daily news show “news every.” since 2007.",
@@ -116,7 +116,7 @@ sorajiro = {
 }
 
 peririn = {
-  file: "https://i.pinimg.com/736x/aa/91/05/aa9105beab6d973591f9df7cadc6dedb--kanagawa-prefecture-japan.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342014/ya8l4iljbtlts7uogp7j.jpg",
   mascot_name: "Peririn",
   title: "Be complete",
   description: "Peririn and Ogurin are much loved as the image characters of the Yokosuka Kaikoku Festival, and were created by cartoonist and direct descendent of Oguri.",
@@ -124,14 +124,14 @@ peririn = {
 }
 
 domokun = {
-  file: "https://www.curiosite.es/img/auto_paginas/w320/451.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341852/y8difadghgrnfdbzo2gt.jpg",
   mascot_name: "Domo-kun",
   title: "DOMO DOMO DOMO",
   description: "Domo (どーも くん, Dōmo-kun) is the official mascot of Japan's public broadcaster NHK, appearing in several 30-second stop-motion interstitial sketches.",
   location: "Shibuya, Tokyo"
 }
 chiitan = {
-  file: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Chiitan.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341839/immg7r2o22pke6sehmiu.jpg",
   mascot_name: "Chiitan",
   title: "Otterly Adorable",
   description: "Chiitan is a Japanese mascot which was formerly a self-declared unofficial representative of the small port city of Susaki. It is a self-described 0-year-old fairy baby otter with no gender that wears a turtle as a hat.",
@@ -139,7 +139,7 @@ chiitan = {
 }
 
 mikyan = {
-  file: "https://i.pinimg.com/474x/3b/59/2b/3b592b9a2bfe6fc6b25f155fac1ce547--mascot-design-mandarin-oranges.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341986/ex1enihinlqdkfecvysr.jpg",
   mascot_name: "Mikyan",
   title: "Dog fused with an orange",
   description: "Mikyan is the official mascot of Ehime Prefecture. He combines the motifs of a mikan orange and a dog. Mikan oranges are a local speciality of Ehime.",
@@ -147,7 +147,7 @@ mikyan = {
 }
 
 barysan = {
-  file: "https://pbs.twimg.com/media/FD9xkCyaQAATHHN.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341822/rouaz9tn4sukxe3het5n.jpg",
   mascot_name: "Barysan",
   title: "The Competition",
   description: "Barysan is the yurukyara from Imabari city in Ehime Prefecture. In 2011, he was the runner-up in Japan's Yurukyara Grand Prix and won first place in 2012.",
@@ -155,7 +155,7 @@ barysan = {
 }
 
 hakogeo = {
-  file: "https://pbs.twimg.com/media/DcRnJ7UV4AI2r7a.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341892/rf2wejb15ucnfhxeuvub.jpg",
   mascot_name: "Hakogeo",
   title: "Let's Soak!",
   description: "Hakogeo, the mascot of Hakone Geopark. Cute, bubbly, and always dressed inappropriately",
@@ -163,7 +163,7 @@ hakogeo = {
 }
 
 kaparu = {
-  file: "https://hyperjapan.co.uk/wp-content/uploads/2020/10/Kaparu.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341929/f3izyumj19lygstpm9do.jpg",
   mascot_name: "Kaparu",
   title: "Goblin of Deep Shame",
   description: "KAPPA comes from a folk tale of SHIKI-city, which is told to live in the rivers and its head dish always needs wet! Enjoy KAPARU's dance and music!",
@@ -171,7 +171,7 @@ kaparu = {
 }
 
 swingy = {
-  file: "https://www.city.yokohama.lg.jp/naka/shokai/mascot/swingy.images/0001_20181108.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342062/ulriu0iyle6s1gr4bvuc.jpg",
   mascot_name: "Swingy",
   title: "Born and raised in Daisanbashi",
   description: "He is a jazz player and an entertainer with a service spirit. He likes events and even fly to small gatherings on the street corner. The sound of the saxophone may be echoed on the roof of the twilight Daishin Bridge. If you feel like it, come and look for it.",
@@ -179,7 +179,7 @@ swingy = {
 }
 
 nazo = {
-  file: "https://pbs.twimg.com/media/Dgn5ekJVMAApb-g.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341995/wovp9r6homi2eti7lhmw.jpg",
   mascot_name: "Nazo-no-sakana",
   title: "Mysterious",
   description: "Nazo No Sakana, the Chiba Marines' mascot, first gained fame by vomiting out his own skeleton.",
@@ -187,7 +187,7 @@ nazo = {
 }
 
 peko = {
-  file: "https://64.media.tumblr.com/d0f6015672c18dcb37fc2cd51755bb6a/tumblr_p9mfzaaNHB1xulpojo1_1280.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342005/qwkkyvqhzaajzijlcrqb.jpg",
   mascot_name: "Pekochan",
   title: "Peron peron",
   description: "Fujiya's mascot is Peko-chan, a girl in pigtails licking her lips. Peko-chan is a well-known marketing icon in Japan, where life-sized dolls of the mascot are commonly seen nationwide standing outside the chain's stores.",
@@ -195,7 +195,7 @@ peko = {
 }
 
 sanomaru = {
-  file: "https://pbs.twimg.com/media/DSnM6xhV4AA7ITQ.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342027/rkj0wobplki58032erqv.jpg",
   mascot_name: "Sanomaru",
   title: "Available to eat",
   description: "Sanomaru is a samurai mascot to promote his local town, Sano-city in Tochigi. He wears symbols of famous local foods ramen noodle bowl and imo-furai",
@@ -203,7 +203,7 @@ sanomaru = {
 }
 
 sorayan = {
-  file: "https://www.ana-cooljapan.com/destinations/img/osaka/itamiairport/216-01.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675342051/hfrgkexj32egcd8qjq2g.jpg",
   mascot_name: "Sorayan",
   title: "We can fly together",
   description: "Sorayan from Osaka's Itami Airport. Designed to look like an airplane, Sorayan has a round white body and speaks with a unique Kansai accent.",
@@ -211,7 +211,7 @@ sorayan = {
 }
 
 kanpachiro = {
-  file: "https://pbs.twimg.com/media/ENcqXWbU8AATtAd.jpg",
+  file: "https://res.cloudinary.com/df7gbyhfx/image/upload/v1675341911/qqk7w1ybuv4bqinuof75.jpg",
   mascot_name: "Kanpachiro",
   title: "Here for business",
   description: "Kanpachiro is the dancing fish-headed businessman mascot of Kanoya City in Kagoshima Prefecture. The fish that serves as his head is the specialty product of Kanoya City.",
@@ -226,7 +226,7 @@ kanpachiro = {
 #   location:
 # }
 
-puts "Follow by creating new records of Listings..."
+puts "Follow by creating 16 new records of Listings..."
 
 mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan, kanpachiro]
 
@@ -238,7 +238,7 @@ def create_listing(mascot)
     title: mascot[:title],
     description: mascot[:description],
     location: mascot[:location],
-    hourly_rate: (15..150).to_a.sample,
+    hourly_rate: (50..150).to_a.sample,
     user: User.all.sample
   })
 
@@ -246,13 +246,47 @@ def create_listing(mascot)
   new_mascot.save
 end
 
-mascots.each do |mascot|
+mascots.each_with_index do |mascot, index|
   create_listing(mascot)
+  puts "Created #{index + 1} mascot#{index.zero? ? '' : 's'}"
 end
 
-puts "Next, creating new records of Reviews..."
 
-COMMENTS = [
+puts "Next, creating 40 new records of Bookings..."
+
+BOOKING_COMMENTS = [
+  "I want the mascot to sing and dance please.",
+  "",
+  "No special request",
+  "My kids are afraid of ballons, please do not bring ballons.",
+  "It's a special occasion, so I booked you an hour in advance for preparation and briefing",
+  "Don't be late thanks",
+  "It's a themed event, do you have special costume for your mascot?",
+  "N/A",
+  "Thanks, looking forward to see you at the event!",
+  "Would like to have the mascot to make an entrance with a dance"
+]
+
+users = User.all
+listings = Listing.all
+events = %i[Birthday Proposal Wedding Funeral Other]
+
+40.times do
+  new_book = Booking.new
+  new_book.user = users.sample
+  new_book.comment = BOOKING_COMMENTS.sample
+  new_book.listing = listings.sample
+  new_book.event_type = events.sample
+  new_book.event_address = PREFECTURES.sample
+  new_book.start_time = Faker::Date.in_date_period(month: 1)
+  new_book.end_time = new_book.start_time
+  new_book.status = rand(0..3)
+  new_book.save
+end
+
+puts "Finally, creating 30 new records of Reviews..."
+
+REVIEW_COMMENTS = [
   "Characatch is the best site for mascots! ^w^",
   "Thank you for showing up at our event",
   "Your mascot is really cute, thanks",
@@ -267,30 +301,15 @@ COMMENTS = [
   "Thank you very much!"
 ]
 
-40.times do
+30.times do
+  user = User.all.sample
+  user = User.all.sample until user.bookings.any?
+  booking = user.bookings.sample
   Review.create!({
-    content: COMMENTS.sample,
-    rating: rand(3..5),
-    listing: Listing.all.sample,
-    user: User.all.sample
+    user: user,
+    listing: booking.listing,
+    content: REVIEW_COMMENTS.sample,
+    rating: rand(3..5)
   })
 end
-
-
-users = User.all
-listings = Listing.all
-events = %i[Birthday Proposal Wedding Funeral Other]
-
-20.times do
-  new_book = Booking.new
-  new_book.user = users.sample
-  new_book.listing = listings.sample
-  new_book.event_type = events.sample
-  new_book.event_address = PREFECTURES.sample
-  new_book.start_time = Faker::Date.in_date_period(month: 1)
-  new_book.end_time = new_book.start_time
-  new_book.status = rand(0..3)
-  new_book.save
-end
-
 puts "Done"
