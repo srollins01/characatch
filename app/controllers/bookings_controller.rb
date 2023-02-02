@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_listing, except: :accept
+  before_action :set_listing, only: [:create, :update]
 
   def new
     @booking = Booking.new
@@ -21,16 +21,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     if @booking.update(booking_params)
-      redirect_to dashboard_path(@listing)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def accept
-    @bookings = Bookings
-    authorize @bookings
   end
 
   private
