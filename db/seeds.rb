@@ -202,7 +202,7 @@ sanomaru = {
 }
 
 sorayan = {
-  file: "https://www.ana-cooljapan.com/destinations/img/osaka/itamiairport/216-01.jpg",
+  file: "https://pbs.twimg.com/media/CdFFRZIUMAANK6U.jpg",
   mascot_name: "Sorayan",
   title: "We can fly together",
   description: "Sorayan from Osaka's Itami Airport. Designed to look like an airplane, Sorayan has a round white body and speaks with a unique Kansai accent.",

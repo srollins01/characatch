@@ -7,11 +7,10 @@ Rails.application.routes.draw do
 
     # Defines the root path route ("/")
     # root "articles#index"
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create edit update]
     resources :reviews, only: %i[index new create]
   end
 
-  # resource :bookings, only: [:update]
   get "/dashboard", to: "dashboard#show"
   patch "/dashboard", to: "dashboard#booking_update", as: :booking_update
   resources :reviews, only: %i[edit update destroy]
