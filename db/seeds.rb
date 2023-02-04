@@ -64,7 +64,7 @@ Listing.destroy_all
 User.destroy_all
 puts "Done deletion"
 
-puts "Creating 8 new records of Users..."
+puts "Creating 8 new Users..."
 
 User.create!(nickname: "sarahR", email: "sarah@email.com", password: "123456")
 User.create(nickname: "tanao", email: "tanner@email.com", password: "123456")
@@ -226,7 +226,7 @@ kanpachiro = {
 #   location:
 # }
 
-puts "Follow by creating 16 new records of Listings..."
+puts "Follow by creating 16 new Listings..."
 
 mascots = [kumamon, funassyi, sorajiro, peririn, domokun, chiitan, mikyan, barysan, hakogeo, kaparu, swingy, nazo, peko, sanomaru, sorayan, kanpachiro]
 
@@ -251,8 +251,7 @@ mascots.each_with_index do |mascot, index|
   puts "Created #{index + 1} mascot#{index.zero? ? '' : 's'}"
 end
 
-
-puts "Next, creating 40 new records of Bookings..."
+puts "Next, creating 40 new Bookings..."
 
 BOOKING_COMMENTS = [
   "I want the mascot to sing and dance please.",
@@ -278,13 +277,13 @@ events = %i[Birthday Proposal Wedding Funeral Other]
   new_book.listing = listings.sample
   new_book.event_type = events.sample
   new_book.event_address = PREFECTURES.sample
-  new_book.start_time = Faker::Date.in_date_period(month: 1)
+  new_book.start_time = Faker::Date.in_date_period(month: 2)
   new_book.end_time = new_book.start_time
   new_book.status = rand(0..3)
   new_book.save
 end
 
-puts "Finally, creating 30 new records of Reviews..."
+puts "Finally, creating 30 new Reviews..."
 
 REVIEW_COMMENTS = [
   "Characatch is the best site for mascots! ^w^",
