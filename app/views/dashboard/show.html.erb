@@ -3,7 +3,8 @@
   <div class="d-flex my-5" style="gap: 50px;">
     <div class="col-8">
       <h3 class="mb-3">My Bookings</h3>
-      <% @user_bookings.each do |booking| %>
+      <% sorted = @user_bookings.sort_by(&:start_time) %>
+      <% sorted.each do |booking| %>
         <%= render "dashboard/booking_card", booking: booking %>
       <% end %>
       <div class="my-5">
@@ -25,7 +26,9 @@
       <% end %>
       <div class="row col-auto">
         <% @user_listings.each do |listing| %>
-            <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+            <%= link_to(listing_path(listing), class: "card-links") do %>
+              <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+            <% end %>
         <% end %>
       </div>
     </div>
