@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_listing, only: [:new, :create]
+  before_action :set_listing, only: [:new, :create, :update]
 
   def new
     @booking = Booking.new

@@ -21,3 +21,24 @@
 .card-step p {
   font-size: 14px;
 }
+
+.status-accepted {
+  color: green;
+}
+
+.status-completed {
+  color: $blue;
+}
+
+.status-declined {
+  color: grey;
+}
+
+.status-pending {
+  color: $orange;
+}
+
+.booking-card-img {
+  width: 100%;
+  object-fit: fill;
+}
