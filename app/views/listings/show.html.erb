@@ -1,34 +1,46 @@
-<div class="container my-5">
-  <div class="row">
-    <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-3")%>
-    <div class="col-9">
+<div class="container">
+  <div class="d-flex mt-4" style="gap: 50px;">
+    <div class="col-8">
       <div class="d-flex justify-content-between">
-        <h1><%= @listing.mascot_name %></h1>
-        <div class="text-decoration-none">
-          <%= link_to new_listing_booking_path(@listing) do %>
-            <button class="btn btn-success">Book this mascot!</button>
-          <% end %>
+        <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-4")%>
+        <div class="mascot-info mx-3">
+          <h1><%= @listing.title %></h1>
+          <h5 class="mb-1"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></h5>
+          <h5 class="mb-3"><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></h5>
+          <h3><%= @listing.mascot_name %></h2>
+          <p><%= @listing.description %></p>
         </div>
       </div>
-      <div>
-        <p class="m-0"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></p>
-        <p><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></p>
-        <h3 class="mt-5"><%= @listing.title %></h2>
-        <p><%= @listing.description %></p>
+
+      <div class="mt-5">
+        <h3>Reviews</h3>
+        <!-- <% if user_signed_in? %>
+        <%= link_to "Write a review", new_listing_review_path(@listing), class:"btn btn-primary m-3" %>
+        <% end %> -->
+
+        <ul class="list-group left-stroke-blue mb-5">
+          <% if @listing.reviews.count > 0 %>
+            <% @listing.reviews.each do |review| %>
+              <li class="list-group-item">
+                <span class="review-star"><%= icon('fa-solid', 'star') * review.rating %></span><br>
+                <%= review.content %><br>
+                <strong><%= review.user.nickname %></strong>
+              </li>
+            <% end %>
+          <% else %>
+            <li class="list-group-item">No Reviews</li>
+          <% end %>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <div class="mt-5">
-    <h3>Reviews</h3>
-    <% if @listing.reviews.count > 0 %>
-      <ul class="list-group">
-        <% @listing.reviews.each do |review| %>
-          <%= render "reviews/review_card", review: review %>
+    <div class="col-4 mb-5">
+      <div class="form-border">
+        <h2 class="text-red">Book <%= @listing.mascot_name %> now!</h2>
+        <%= simple_form_for [@listing, @booking] do |f| %>
+          <%= render 'bookings/form', article: [@listing, @booking] %>
         <% end %>
-      </ul>
-    <% else %>
-      <h4>No reviews yet...</h3>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
