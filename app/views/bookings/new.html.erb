@@ -1,4 +1,4 @@
-<div class="container my-5"></div>
+<div class="container my-5">
   <div class="row mt-5">
     <div class="col-9">
       <div class="d-flex justify-content-between">
@@ -11,14 +11,17 @@
   </div>
   <div class="row row-col-6">
     <div class="col-9">
-      <%= render 'form', article: [@listing, @booking] %>
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= render 'form', article: [@listing, @booking] %>
+      <% end %>
     </div>
   </div>
 
 
-  <div class="row m-5">
-    <%# <%= link_to listing_booking_path(@listing) do %>
-      <%# <button type="button" class="btn btn-primary">Back to Mascot</button> %>
-    <%# <% end %>
+    <div class="row m-5">
+      <%# <%= link_to listing_booking_path(@listing) do %>
+        <%# <button type="button" class="btn btn-primary">Back to Mascot</button> %>
+      <%# <% end %>
+    </div>
   </div>
 </div>

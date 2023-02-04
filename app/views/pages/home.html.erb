@@ -1,26 +1,37 @@
-<div class="container">
-  <div>
-    <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1674734420/wqtevh0jzjsvz82x3plu.png" alt="Catch your character today!">
+  <div class="banner" style="background-image: url(https://res.cloudinary.com/df7gbyhfx/image/upload/v1675158797/kpqrznglss959ybwwdrg.jpg);">
+    <div class="container">
+      <h1>Catch</h1>
+      <h1>your character</h1>
+      <h1>today!</h1>
+    </div>
   </div>
 
+<div class="container">
   <!-- code a "How it works" section -->
   <div class="mt-5">
-    <div class="container">
-      <h1>How it works</h1>
-      <div class="cards-main">
-        <div class="card-step">
-          <h3>Browse</h3>
-          <p>Look for your favorite mascot in our listings of over 2000 mascots!</p>
+    <h1>How it works</h1>
+    <div class="cards-main">
+      <div class="card-step">
+        <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1675158817/rp5v9tg7cvjdncwwtpwk.png" alt="Look">
+        <div>
+          <h3 class="text-blue">Browse</h3>
+          <p class="text-blue">Look for your favorite mascot</p>
         </div>
+      </div>
 
-        <div class="card-step">
-          <h3>Book</h3>
-          <p>Simple one step booking</p>
+      <div class="card-step">
+        <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1675158840/euzzafdrtmsgoh2y1wga.png" alt="Book">
+        <div>
+          <h3 class="text-yellow">Book</h3>
+          <p class="text-yellow">Simple one step booking</p>
         </div>
+      </div>
 
-        <div class="card-step">
-          <h3> Enjoy!</h3>
-          <p>Your favorite mascot will show up at your event.</p>
+      <div class="card-step">
+        <img src="https://res.cloudinary.com/df7gbyhfx/image/upload/v1675158827/eb2dmwunxdrofwjmulqw.png" alt="Party">
+        <div>
+          <h3 class="text-red"> Enjoy!</h3>
+          <p class="text-red">Your favorite mascot will show up at your event</p>
         </div>
       </div>
     </div>
@@ -29,11 +40,9 @@
   <div class="mt-5">
     <h1>Our most popular characters</h1>
   </div>
-  <div class="d-flex mt-3" style="gap: 50px;">
-    <% @listings.first(3).each do |listing| %>
-      <%= link_to listing_path(listing) do %>
-        <%= render "shared/mascot_card", listing: listing %>
-      <% end %>
+  <div class="home-grid">
+    <% @listings.first(8).each do |listing| %>
+      <%= render "shared/mascot_card", listing: listing %>
     <% end %>
   </div>
 </div>

@@ -10,8 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@200;400;600;700;800;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
 
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
     <nav class="navbar navbar-stroke navbar-expand-lg bg-body-tertiary sticky-top bg-white">
       <div class="container-fluid">
         <%= link_to root_path, class: "navbar-brand" do%>
@@ -44,10 +49,8 @@
         </div>
       </div>
     </nav>
-  </head>
 
-  <body>
-    <div class="container">
+    <div>
       <%# flash messages %>
       <p class="alert"><%= alert %></p>
       <%= render "shared/flashes" %>

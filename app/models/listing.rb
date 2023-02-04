@@ -8,6 +8,8 @@ class Listing < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :hourly_rate, presence: true, numericality: { greater_than: 0 }
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
   include PgSearch::Model
   pg_search_scope :search_by_keyword,

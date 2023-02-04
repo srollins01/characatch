@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_listing
+  before_action :set_listing, only: [:new, :create, :update]
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -13,6 +14,22 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to dashboard_path(@listing)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    @listing = @booking.listing
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
