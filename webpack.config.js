@@ -16,5 +16,11 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
     })
-  ]
+  ],
+  resolve: {
+    // ... rest of the resolve config
+    fallback: {
+      "path": require.resolve("path-browserify")
+    }
+  },
 }

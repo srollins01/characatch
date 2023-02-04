@@ -1,0 +1,11 @@
+<% @m_results.first(3).each do |result| %>
+  <%# <% if params[:query].in? result %>
+    <li class="list-group-item" role="option"><%= result.mascot_name %></li>
+  <%# <% end %>
+<% end %>
+
+<% @l_results.first(3).each do |result| %>
+  <%# <% if params[:query].in? result %>
+    <li class="list-group-item" role="option"><%= result.location %></li>
+  <%# <% end %>
+<% end %>

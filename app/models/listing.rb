@@ -16,6 +16,9 @@ class Listing < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  def self.search(q)
+  end
+
   def rate_usd
     "$#{hourly_rate}/hour"
   end
