@@ -15,6 +15,10 @@ class DashboardController < ApplicationController
     end
   end
 
+  def incoming_booking_update
+    booking_update
+  end
+
   private
 
   def booking_params

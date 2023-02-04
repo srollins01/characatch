@@ -25,4 +25,8 @@ class BookingPolicy < ApplicationPolicy
   def booking_update?
     record.listing.user == user
   end
+
+  def incoming_booking_update?
+    record.user == user
+  end
 end
