@@ -21,8 +21,9 @@
         <h5 class="text-end status-<%= booking.status %> mb-3"><%= booking.status %></h5>
         <%# buttons %>
         <div class="float-end">
-          <% if booking.status == "completed" %>
-          <% elsif booking.status == "declined" %>
+          <% if booking.status == "declined" %>
+          <% elsif booking.status == "completed" %>
+            <%= link_to "Write a review", new_listing_review_path(booking.listing), class: "btn btn-info" %>
           <% elsif booking.listing.user != current_user %>
               <button class="btn btn-secondary float-end mb-2">Edit Booking</button>
               <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
