@@ -2,7 +2,36 @@
   <div class="container-listings-main">
 
     <div>
-      <h1>Mascots near you</h1>
+      <div class="mt-4" data-controller="autocomplete" data-autocomplete-min-length-value="1" data-autocomplete-url-value="/autocomplete" role="combobox">
+        <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Enter your location or a mascot name here!",
+            data: {
+              autocomplete_target: "input"
+            }
+          %>
+          <%= button_tag type: 'submit', class: "btn btn-primary" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        <% end %>
+        <ul class="list-group" data-autocomplete-target="results">
+        </ul>
+      </div>
+
+      <% if @listings.count.zero? %>
+        <div class="my-5 d-flex flex-column align-items-center">
+          <p>
+            <strong>
+              <span style="color:#A2A2A2">No matches. ごめんね！</span>
+            </strong>
+          </p>
+          <%= image_tag "no_matches.gif", alt: "character gif", class: "rounded-corners", width: 200 %>
+        </div>
+      <% end %>
+
+      <h1 class="mt-4">Mascots near you</h1>
       <div class="listings-mascot-cards">
         <% @listings.each do |listing| %>
             <%= render "shared/mascot_card", listing: listing %>

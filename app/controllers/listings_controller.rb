@@ -1,8 +1,14 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :autocomplete]
+  skip_after_action :verify_policy_scoped, only: [:index]
+  skip_after_action :verify_authorized, only: [:autocomplete]
 
   def index
-    @listings = policy_scope(Listing)
+    if params[:query].present?
+      @listings = Listing.search_by_keyword(params[:query])
+    else
+      @listings = Listing.all
+    end
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
@@ -16,6 +22,12 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     authorize @listing
     @booking = Booking.new
+  end
+
+  def autocomplete
+    @m_results = Listing.where("mascot_name ilike ?", "%#{params[:q]}%")
+    @l_results = Listing.where("location ilike ?", "%#{params[:q]}%")
+    render layout: false
   end
 
   def new
