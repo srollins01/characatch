@@ -2,12 +2,12 @@
   <div class="d-flex mt-4" style="gap: 50px;">
     <div class="col-8">
       <div class="d-flex justify-content-between">
-        <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-3")%>
-        <div>
-          <h1><%= @listing.mascot_name %></h1>
-          <p class="m-0"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></p>
-          <p><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></p>
-          <h3><%= @listing.title %></h2>
+        <%= cl_image_tag(@listing.photo.key, alt: @listing.mascot_name.titleize, class: "col-4")%>
+        <div class="mascot-info mx-3">
+          <h1><%= @listing.title %></h1>
+          <h5 class="mb-1"><i class="fa-solid fa-location-dot"></i> <%= @listing.location %></h5>
+          <h5 class="mb-3"><i class="fa-solid fa-money-bill"></i> <%= @listing.rate_usd %></h5>
+          <h3><%= @listing.mascot_name %></h2>
           <p><%= @listing.description %></p>
         </div>
       </div>
@@ -18,7 +18,7 @@
         <%= link_to "Write a review", new_listing_review_path(@listing), class:"btn btn-primary m-3" %>
         <% end %> -->
 
-        <ul class="list-group left-stroke-blue">
+        <ul class="list-group left-stroke-blue mb-5">
           <% if @listing.reviews.count > 0 %>
             <% @listing.reviews.each do |review| %>
               <li class="list-group-item">
@@ -34,10 +34,13 @@
       </div>
     </div>
 
-    <div class="col-3 form-border">
-      <h2 class="text-blue">Book <%= @listing.mascot_name %> now!</h2>
-      <%= simple_form_for [@listing, @booking] do |f| %>
-        <%= render 'bookings/form', article: [@listing, @booking] %>
-      <% end %>    </div>
+    <div class="col-4 mb-5">
+      <div class="form-border">
+        <h2 class="text-red">Book <%= @listing.mascot_name %> now!</h2>
+        <%= simple_form_for [@listing, @booking] do |f| %>
+          <%= render 'bookings/form', article: [@listing, @booking] %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
