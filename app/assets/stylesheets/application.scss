@@ -49,3 +49,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   border-left: solid $yellow;
   border-left-width: 10px;
 }
+
+.alert {
+  position: fixed;
+  bottom: 50;
+  right: 50;
+  width: 20%;
+}
