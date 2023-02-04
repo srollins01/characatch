@@ -41,7 +41,7 @@
               </div>
 
           <% elsif booking.listing.user == current_user && booking.status != "pending" %>
-              <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+              <%= simple_form_for booking, url: incoming_booking_update_path, method: :patch do |f| %>
                 <%= f.input :id, as: :hidden %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
                 <%= f.submit 'Cancel booking', class: "btn btn-secondary float-end mt-3" %>
@@ -49,12 +49,12 @@
 
           <% else %>
             <div class = "d-flex float-end">
-                <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+                <%= simple_form_for booking, url: incoming_booking_update_path, method: :patch do |f| %>
                   <%= f.input :id, as: :hidden %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
                   <%= f.submit 'Accept', class: "btn btn-success" %>
                 <% end %>
-                <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+                <%= simple_form_for booking, url: incoming_booking_update_path, method: :patch do |f| %>
                   <%= f.input :id, as: :hidden %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
                   <%= f.submit 'Decline', class: "btn btn-danger ms-1" %>

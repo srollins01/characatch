@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "dashboard#show"
   patch "/dashboard", to: "dashboard#booking_update", as: :booking_update
+  patch "/dashboard", to: "dashboard#incoming_booking_update", as: :incoming_booking_update
   resources :reviews, only: %i[edit update destroy]
 end
