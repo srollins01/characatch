@@ -31,7 +31,7 @@
         </div>
       <% end %>
 
-      <h1>Mascots near you</h1>
+      <h1 class="mt-4">Mascots near you</h1>
       <div class="listings-mascot-cards">
         <% @listings.each do |listing| %>
             <%= render "shared/mascot_card", listing: listing %>

@@ -13,5 +13,5 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import SortController from "./sort_controller"
-application.register("sort", SortController)
+// import SortController from "./sort_controller"
+// application.register("sort", SortController)
