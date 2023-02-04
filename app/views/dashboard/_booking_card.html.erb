@@ -23,7 +23,7 @@
         <div>
           <% if booking.status == "declined" %>
 
-          <% elsif booking.status == "completed" && booking.user != current_user %>
+          <% elsif booking.status == "completed" && booking.user == current_user %>
             <%= link_to "Write a review", new_listing_review_path(booking.listing), class: "btn btn-info float-end mt-3" %>
 
           <% elsif booking.listing.user != current_user %>
