@@ -11,6 +11,7 @@
 @import "components/index";
 @import "components/navbar";
 @import "components/mascot_card";
+@import "components/booking_card";
 @import "components/navbar";
 @import "pages/index";
 
@@ -48,4 +49,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .left-stroke-yellow {
   border-left: solid $yellow;
   border-left-width: 10px;
+}
+
+.alert {
+  position: fixed;
+  bottom: 50;
+  right: 50;
+  width: 20%;
 }

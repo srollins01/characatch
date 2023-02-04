@@ -2,10 +2,10 @@
   <div class="row g-0">
 
     <div class="col-md-2">
-      <%= cl_image_tag booking.listing.photo.key, height: 150, crop: :fill, class: "img-fluid rounded-start booking-card-img" %>
+      <%= cl_image_tag booking.listing.photo.key, alt: booking.listing.mascot_name, class: "booking-card-img" %>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-6 ps-2">
       <div class="card-body">
         <h5 class="card-title"><%= booking.listing.mascot_name %></h5>
         <p class="card-text"><i class="fa-regular fa-clock"></i>
@@ -16,47 +16,54 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4 pe-2">
       <div class="card-body">
-        <h5 class="text-end status-<%= booking.status %> mb-3"><%= booking.status %></h5>
+        <h5 class="text-end status-<%= booking.status %>"><%= booking.status %></h5>
         <%# buttons %>
-        <div class="float-end">
-          <% if booking.status == "completed" %>
-          <% elsif booking.status == "declined" %>
+        <div>
+          <% if booking.status == "declined" %>
+
+          <% elsif booking.status == "completed" && booking.user != current_user %>
+
+          <% elsif booking.status == "completed" && booking.user == current_user %>
+            <%= link_to "Write a review", new_listing_review_path(booking.listing), class: "btn btn-info float-end mt-3" %>
+
           <% elsif booking.listing.user != current_user %>
-              <button class="btn btn-secondary float-end mb-2">Edit Booking</button>
-              <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
-                <%= f.input :id, as: :hidden %>
-                <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
-                <%= f.submit 'Cancel booking', class: "btn btn-info" %>
-              <% end %>
+              <div class="d-flex float-end">
+                <%= link_to edit_listing_booking_path(booking.listing.id, booking.id) do %>
+                  <button type="button" class="btn btn-success mt-3">Edit booking</button>
+                <% end %>
+                <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
+                  <%= f.input :id, as: :hidden %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
+                  <%= f.submit 'Cancel booking', class: "btn btn-secondary ms-1" %>
+                <% end %>
+              </div>
 
           <% elsif booking.listing.user == current_user && booking.status != "pending" %>
               <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
                 <%= f.input :id, as: :hidden %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
-                <%= f.submit 'Cancel booking', class: "btn btn-info" %>
+                <%= f.submit 'Cancel booking', class: "btn btn-secondary float-end mt-3" %>
               <% end %>
 
           <% else %>
-            <div class = "d-flex">
+            <div class = "d-flex float-end">
                 <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
                   <%= f.input :id, as: :hidden %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
                   <%= f.submit 'Accept', class: "btn btn-success" %>
                 <% end %>
-
                 <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
                   <%= f.input :id, as: :hidden %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
-                  <%= f.submit 'Decline', class: "btn btn-danger" %>
+                  <%= f.submit 'Decline', class: "btn btn-danger ms-1" %>
                 <% end %>
             </div>
-
           <% end %>
+
         </div>
       </div>
     </div>
-
   </div>
 </div>

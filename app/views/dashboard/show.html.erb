@@ -1,14 +1,14 @@
 <div class="container my-5">
   <h1>Welcome <%= current_user.nickname %>!</h1>
-  <div class="d-flex mt-4" style="gap: 50px;">
+  <div class="d-flex my-5" style="gap: 50px;">
     <div class="col-8">
-      <h3>My Bookings</h3>
+      <h3 class="mb-3">My Bookings</h3>
       <% sorted = @user_bookings.sort_by(&:start_time) %>
       <% sorted.each do |booking| %>
         <%= render "dashboard/booking_card", booking: booking %>
       <% end %>
-      <div class="my-4">
-        <h3>My Mascots Jobs</h3>
+      <div class="my-5">
+        <h3 class="mb-3">My Mascots Jobs</h3>
         <% @user_listings.each do |listing| %>
           <div>
             <% listing.bookings.each do |booking| %>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="col-4">
-      <h3>My Mascots</h3>
+      <h3 class="mb-3">My Mascots</h3>
       <%= link_to new_listing_path do %>
         <button type="button" class="btn btn-primary mb-3">New Mascot</button>
       <% end %>
