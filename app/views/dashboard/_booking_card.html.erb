@@ -2,10 +2,10 @@
   <div class="row g-0">
 
     <div class="col-md-2">
-      <%= cl_image_tag booking.listing.photo.key, height: 150, crop: :fill, class: "img-fluid rounded-start booking-card-img" %>
+      <%= cl_image_tag booking.listing.photo.key, alt: booking.listing.mascot_name, class: "booking-card-img" %>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-6">
       <div class="card-body">
         <h5 class="card-title"><%= booking.listing.mascot_name %></h5>
         <p class="card-text"><i class="fa-regular fa-clock"></i>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card-body">
         <h5 class="text-end status-<%= booking.status %> mb-3"><%= booking.status %></h5>
         <%# buttons %>
@@ -25,7 +25,7 @@
           <% elsif booking.status == "completed" %>
             <%= link_to "Write a review", new_listing_review_path(booking.listing), class: "btn btn-info" %>
           <% elsif booking.listing.user != current_user %>
-              <button class="btn btn-secondary float-end mb-2">Edit Booking</button>
+              <button class="btn btn-secondary">Edit Booking</button>
               <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
                 <%= f.input :id, as: :hidden %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
@@ -50,7 +50,7 @@
                 <%= simple_form_for booking, url: booking_update_path, method: :patch do |f| %>
                   <%= f.input :id, as: :hidden %>
                   <%= f.input :status, as: :hidden, input_html: { value: 'declined'} %>
-                  <%= f.submit 'Decline', class: "btn btn-danger" %>
+                  <%= f.submit 'Decline', class: "btn btn-danger ms-1" %>
                 <% end %>
             </div>
 

@@ -21,7 +21,6 @@
 
   <div class="mt-5">
     <h3>Reviews</h3>
-    <% if @listing.booking %>
     <% if @listing.reviews.count > 0 %>
       <ul class="list-group">
         <% @listing.reviews.each do |review| %>
