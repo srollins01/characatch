@@ -25,7 +25,9 @@
       <% end %>
       <div class="row col-auto">
         <% @user_listings.each do |listing| %>
-            <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+            <%= link_to(listing_path(listing), class: "card-links") do %>
+              <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+            <% end %>
         <% end %>
       </div>
     </div>
