@@ -1,31 +1,35 @@
-<h1>Welcome <%= current_user.nickname %>!</h1>
-<div class="d-flex mt-4" style="gap: 50px;">
-  <div class="col-8">
-    <h3>My Bookings</h3>
-    <% @user_bookings.each do |booking| %>
-      <%= render "dashboard/booking_card", booking: booking %>
-    <% end %>
-    <div class="my-4">
-      <h3>My Mascots Jobs</h3>
-      <% @user_listings.each do |listing| %>
-        <div>
-          <% listing.bookings.each do |booking| %>
-            <%= render "dashboard/booking_card", booking: booking %>
-          <% end %>
-        </div>
+<div class="container my-5">
+  <h1>Welcome <%= current_user.nickname %>!</h1>
+  <div class="d-flex mt-4" style="gap: 50px;">
+    <div class="col-8">
+      <h3>My Bookings</h3>
+      <% @user_bookings.each do |booking| %>
+        <%= render "dashboard/booking_card", booking: booking %>
       <% end %>
+      <div class="my-4">
+        <h3>My Mascots Jobs</h3>
+        <% @user_listings.each do |listing| %>
+          <div>
+            <% listing.bookings.each do |booking| %>
+              <%= render "dashboard/booking_card", booking: booking %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-4">
-    <h3>My Mascots</h3>
-    <%= link_to new_listing_path do %>
-      <button type="button" class="btn btn-primary mb-3">New Mascot</button>
-    <% end %>
-    <div class="row col-auto">
-      <% @user_listings.each do |listing| %>
-          <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+    <div class="col-4">
+      <h3>My Mascots</h3>
+      <%= link_to new_listing_path do %>
+        <button type="button" class="btn btn-primary mb-3">New Mascot</button>
       <% end %>
+      <div class="row col-auto">
+        <% @user_listings.each do |listing| %>
+            <%= link_to(listing_path(listing), class: "card-links") do %>
+              <div class="col-6"><%= cl_image_tag listing.photo.key, width:100, height: 150, crop: :fill %></div>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

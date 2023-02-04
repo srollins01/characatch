@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_listing, only: [:create, :update]
+  before_action :set_listing, only: [:new, :create, :update]
 
   def new
     @booking = Booking.new
@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    @listing = @booking.listing
+    authorize @booking
   end
 
   def update

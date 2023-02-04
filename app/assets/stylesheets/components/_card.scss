@@ -4,10 +4,12 @@
 }
 
 .card-step {
-  width: 160px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  margin: 0 auto;
+  overflow: hidden;
+  height: 120px;
+  width: 360px;
+  background: white;
+  display: flex;
+  align-items: center;
 }
 
 .card-step img {
@@ -15,9 +17,56 @@
 }
 
 .card-step h3 {
-  text-align: center;
+  margin: 0;
 }
 
 .card-step p {
-  font-size: 14px;
+  font-size: 18px;
+}
+
+.listings-mascot-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+  margin-top: 16px;
+}
+
+.status-accepted {
+  color: green;
+}
+
+.status-completed {
+  color: $blue;
+}
+
+.status-declined {
+  color: grey;
+}
+
+.status-pending {
+  color: $orange;
+}
+
+.booking-card-img {
+  width: 100%;
+  object-fit: fill;
+}
+
+@media(max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.text-red {
+  color: $red;
 }
