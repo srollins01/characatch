@@ -1,9 +1,7 @@
 # Characatch
-Yasashii is an automated web translation service for booking clinic appointments in Japan.
-- Search by symptoms and location to find the right clinic in your area.
-- Call any clinic via automated phone call. 
+Characatch is a website for booking mascot costumed-performer services for events 👯‍♀️
 
-<a href="https://www.yasashii.care/">Yasashii Home Page</a>
+<a href="https://characatch.herokuapp.com/">Characatch Home Page</a>
 
 ## Built With
 - [Ruby on Rails](https://guides.rubyonrails.org/) - Back-end / Front-end
