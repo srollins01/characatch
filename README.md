@@ -6,12 +6,12 @@ Yasashii is an automated web translation service for booking clinic appointments
 <a href="https://www.yasashii.care/">Yasashii Home Page</a>
 
 ## Built With
-- [Ruby on Rails](https://guides.rubyonrails.org/) - Backend / Front-end
+- [Ruby on Rails](https://guides.rubyonrails.org/) - Back-end / Front-end
 - [Stimulus JS](https://stimulus.hotwired.dev/) - Front-end JS
 - [Heroku](https://heroku.com/) - Deployment
 - [PostgreSQL](https://www.postgresql.org/) - Database
-- [Bootstrap](https://getbootstrap.com/) — Styling
-- [Figma](https://www.figma.com) — Prototyping
+- [Bootstrap](https://getbootstrap.com/) - Styling
+- [Figma](https://www.figma.com) - Prototyping
 
 ## Team Members
 - [Yvonne Tou](https://www.linkedin.com/in/touyvonne/)
