@@ -4,4 +4,18 @@
   grid-gap: 16px;
   flex-grow: 1;
   margin-top: 16px;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.mascot-card {
+  overflow: hidden;
+  min-width: 0px;
+}
+
+.mascot-card h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95%;
 }
