@@ -30,6 +30,8 @@
   grid-gap: 16px;
   flex-grow: 1;
   margin-top: 16px;
+  min-width: 0px;
+  min-height: 0px;
 }
 
 @media(max-width: 768px) {
@@ -39,5 +41,8 @@
   }
   .card-step {
     width: 320px;
+  }
+  .listings-mascot-cards {
+    grid-template-columns: 1fr;
   }
 }
