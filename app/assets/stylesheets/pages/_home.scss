@@ -19,3 +19,33 @@
   text-overflow: ellipsis;
   max-width: 95%;
 }
+
+.mascot-card-width {
+  width: 18rem;
+}
+
+@media(max-width: 992px) {
+  .home-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mascot-card {
+    overflow: visible;
+    min-width: auto;
+  }
+  .mascot-card-width {
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .mascot-card {
+    overflow: visible;
+    min-width: auto;
+  }
+  .mascot-card-width {
+    width: 100%;
+  }
+}
