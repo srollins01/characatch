@@ -35,6 +35,9 @@
   .mascot-card-width {
     width: 100%;
   }
+  .mascot-card img {
+    height: 200px !important;
+  }
 }
 
 @media(max-width: 768px) {
@@ -47,5 +50,9 @@
   }
   .mascot-card-width {
     width: 100%;
+  }
+
+  .mascot-card img {
+    height: 200px !important;
   }
 }
