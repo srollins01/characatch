@@ -29,7 +29,7 @@ Characatch is a website for booking mascot costumed-performer services for event
 
 
 
-<a href="https://characatch.herokuapp.com/">Characatch Home Page</a>
+<a href="https://characatch-app-08438e6cbd51.herokuapp.com/">Characatch Home Page</a>
 
 ## Built With
 - [Ruby on Rails](https://guides.rubyonrails.org/) - Back-end / Front-end
